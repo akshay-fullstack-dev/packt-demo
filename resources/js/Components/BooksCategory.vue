@@ -22,20 +22,20 @@
                         </li>
                     </ul>
                 </div>
-                <div class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:grap-8 md:gap-6 gap-4 mt-10">
+                <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:grap-8 md:gap-6 gap-4 mt-10">
                     <div class="max-w-sm rounded overflow-hidden shadow-lg" v-for="book in selectedBooks">
-                        <img class="w-full" src="https://static.packt-cdn.com/products/9781800562523/cover/smaller"
+                        <img class="h-[309px] w-[250px]" src="https://static.packt-cdn.com/products/9781800562523/cover/smaller"
                             alt="Mountain">
                         <div class="px-6 py-4">
-                            <div class="font-bold text-xl mb-2">{{book.title}}</div>
-                            <p class="text-gray-700 text-base">
+                            <div class="font-bold text-sm mb-2">{{book.title}}</div>
+                            <p class="text-gray-700 text-sm">
                                 {{book.author}}
                             </p> {{book.publication_date}} &middot; {{book.book_length}} pages
                         </div>
                         <!-- <div class="px-2">{{book.author}}</div> -->
                         <div class="px-6 pt-4 pb-2">
                             <p v-if="book.reviews_rating ==0">No rating</p>
-                            <star-rating v-else :rating=book.reviews_rating />
+                            <star-rating v-else :star-size="20" :rating=book.reviews_rating />
                         </div>
                     </div>
                 </div>
@@ -82,14 +82,14 @@ export default {
     methods: {
         frontArrow: function () {
             if (this.currentIndex == 0) {
-                this.currentIndex = 6;
+                this.currentIndex = 7;
             }
             this.currentIndex--;
             this.showBooks()
 
         },
         backArrow: function () {
-            if (this.currentIndex == 6) {
+            if (this.currentIndex == 7) {
                 this.currentIndex = 0;
             }
             this.showBooks()
@@ -106,7 +106,7 @@ export default {
             this.booksList = data.data;
         },
         showBooks: function () {
-            let books = this.booksList.slice(this.currentIndex, this.currentIndex + 4);
+            let books = this.booksList.slice(this.currentIndex, this.currentIndex + 3);
             books.forEach(async function (book) {
                 book.publication_date = new Date(book.publication_date).toLocaleString('en-us', { month: 'short', year: 'numeric' })
             });
