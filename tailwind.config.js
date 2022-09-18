@@ -12,9 +12,17 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                sans: ['Outfit', ...defaultTheme.fontFamily.sans],
             },
         },
+        backgroundImage: {
+            'banner-code': "url('https://www.packtpub.com/images/backgrounds/header-bg.png')"
+        },
+        colors: {
+            'dark-grey': '#1a1a1a',
+            'white': '#ffffff',
+            'natural': '#fafafa',
+        }
     },
 
     plugins: [require('@tailwindcss/forms')],
