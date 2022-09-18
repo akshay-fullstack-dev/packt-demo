@@ -44,11 +44,11 @@
                     </template>
                     <template v-else>
                         <Link :href="route('login')"
-                            class="block text-md px-4 py-2 rounded text-grey-700 ml-2 font-bold hover:text-white mt-4 hover:bg-blue-700 lg:mt-0">
+                            class="block text-md px-4 py-2 rounded text-white ml-2 font-bold hover:text-white mt-4 hover:bg-blue-700 lg:mt-0">
                         Log in
                         </Link>
                         <Link v-if="canRegister" :href="route('register')"
-                            class="block text-md px-4  ml-2 py-2 rounded text-grey-700 font-bold hover:text-white mt-4 hover:bg-blue-700 lg:mt-0">
+                            class="block text-md px-4  ml-2 py-2 rounded text-white font-bold hover:text-white mt-4 hover:bg-blue-700 lg:mt-0">
                         Register</Link>
                     </template>
                 </div>

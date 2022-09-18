@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -40,6 +41,8 @@ Route::middleware(['auth'])->group(function () {
     })->name('dashboard');
     Route::get('/product', [ProductController::class, 'index'])->name('product.index');
 });
+
+Route::get('/get-books/{category_name}',[ProductCategoryController::class,'get']);
 
 
 
